@@ -1,0 +1,24 @@
+{
+  "name": "practical-coding",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Practical coding problems solved in TypeScript, with tests",
+  "scripts": {
+    "test": "node --test",
+    "test:folder": "node scripts/test-folder.mjs",
+    "test:watch": "node --test --watch",
+    "typecheck": "tsc",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "prettier": "^3.10.1",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}

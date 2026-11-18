@@ -1,0 +1,31 @@
+{
+  // Type checking only. There is no build step — Node runs the files directly.
+  // Check with: npm run typecheck
+  "compilerOptions": {
+    // Match the runtime: ESM (package.json has "type": "module") on Node.
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "target": "esnext",
+    "lib": ["esnext"],
+    "types": ["node"],
+
+    // Type-check the JavaScript too — types in JSDoc count, not just .ts files.
+    "allowJs": true,
+    "checkJs": true,
+    "noEmit": true,
+
+    // Node strips types at runtime and needs the real extension in imports
+    // ("import { x } from './solution.ts'"), so let TypeScript accept that.
+    "allowImportingTsExtensions": true,
+
+    "strict": true,
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true
+  },
+  // Tests are read-only-ish and not the point of the exercise, so they don't
+  // get checked: their untyped callbacks would drown out real errors.
+  "include": ["problems/**/*.js", "problems/**/*.ts"],
+  "exclude": ["node_modules", "problems/**/*.test.js", "problems/**/*.test.ts"]
+}
